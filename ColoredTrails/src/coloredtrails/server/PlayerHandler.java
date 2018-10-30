@@ -73,7 +73,7 @@ public class PlayerHandler extends Thread {
 				Message msg = messageQueue.take();
 				LOGGER.log(Level.FINE,
 						Thread.currentThread().getName() + " - Processing Message of client " + clientNum);
-				LOGGER.log(Level.FINEST,
+				LOGGER.log(Level.INFO,
 						Thread.currentThread().getName() + " - Message of client is " + msg.getContent());
 				if (msg.getMessageType() == MessageType.CLIENT)
 					handleMessage(msg);

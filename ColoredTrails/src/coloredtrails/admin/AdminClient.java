@@ -21,7 +21,6 @@ import org.json.simple.Jsoner;
 import coloredtrails.common.Game;
 import coloredtrails.common.Game.Status;
 import coloredtrails.common.UserType;
-import coloredtrails.ui.ColoredTrailsBoardGui;
 
 public class AdminClient extends Thread {
 	private static final Logger LOGGER = Logger.getLogger(AdminClient.class.getName());
@@ -84,96 +83,101 @@ public class AdminClient extends Thread {
 						command = parts[0];
 						args = parts[1];
 					}
-					//System.out.println("Command:"+command+" args:"+args);
-					switch (command.toLowerCase()) {
-					case "idlers":
-						System.out.println("show idle players");
-						getAvailablePlayers();
-						break;
-					case "players":
-						System.out.println("show all players");
-						getAllPlayers();
-						break;
-					case "games":
-						getAllGames();
-						break;
-					case "results":
-						getAllResults();
-						break;
-					case "cfg":
-						getAllGameConfigs();
-						break;
-					case "refreshcfg":
-						refreshGameConfigs();
-						break;
-					case "creategame":
-						String gameConfig;
-						if (args == null) {
-							System.out.print("Admin>Enter game config:  ");
-							gameConfig = consoleIn.readLine();
-							if (gameConfig == null)
-								break loop;
-						} else {
-							gameConfig = args;
-						}
-						createGame(gameConfig);
-						break;
-					case "addplayer":
-						String addplayer;
-						if (args == null) {
-							System.out.print("Admin>Enter gameid playerids:  ");
-							addplayer = consoleIn.readLine();
-							if (addplayer == null)
-								break loop;
-						} else {
-							addplayer = args;
-						}
+					// System.out.println("Command:"+command+" args:"+args);
+					try {
+						switch (command.toLowerCase()) {
+						case "idlers":
+							System.out.println("show idle players");
+							getAvailablePlayers();
+							break;
+						case "players":
+							System.out.println("show all players");
+							getAllPlayers();
+							break;
+						case "games":
+							getAllGames();
+							break;
+						case "results":
+							getAllResults();
+							break;
+						case "cfg":
+							getAllGameConfigs();
+							break;
+						case "refreshcfg":
+							refreshGameConfigs();
+							break;
+						case "creategame":
+							String gameConfig;
+							if (args == null) {
+								System.out.print("Admin>Enter game config:  ");
+								gameConfig = consoleIn.readLine();
+								if (gameConfig == null)
+									break loop;
+							} else {
+								gameConfig = args;
+							}
+							createGame(gameConfig);
+							break;
+						case "addplayer":
+							String addplayer;
+							if (args == null) {
+								System.out.print("Admin>Enter gameid playerids:  ");
+								addplayer = consoleIn.readLine();
+								if (addplayer == null)
+									break loop;
+							} else {
+								addplayer = args;
+							}
 
-						addPlayer(addplayer);
-						break;
-					case "removeplayer":
-						String removeplayer;
-						if (args == null) {
-							System.out.print("Admin>Enter gameid playerids:  ");
-							removeplayer = consoleIn.readLine();
-							if (removeplayer == null)
-								break loop;
-						} else {
-							removeplayer = args;
-						}
+							addPlayer(addplayer);
+							break;
+						case "removeplayer":
+							String removeplayer;
+							if (args == null) {
+								System.out.print("Admin>Enter gameid playerids:  ");
+								removeplayer = consoleIn.readLine();
+								if (removeplayer == null)
+									break loop;
+							} else {
+								removeplayer = args;
+							}
 
-						removePlayer(removeplayer);
-						break;						
-					case "viewgame":
-						String gameId;
-						if (args == null) {
-							System.out.print("Admin>Enter game id:  ");
-							gameId = consoleIn.readLine();
-							if (gameId == null)
-								break loop;
-						} else {
-							gameId = args;
+							removePlayer(removeplayer);
+							break;
+						case "viewgame":
+							String gameId;
+							if (args == null) {
+								System.out.print("Admin>Enter game id:  ");
+								gameId = consoleIn.readLine();
+								if (gameId == null)
+									break loop;
+							} else {
+								gameId = args;
+							}
+							viewgame(gameId);
+							break;
+						case "":
+							break;
+						case "help":
+						default:
+							System.out.println("Commands supported");
+							System.out.println("players        : List all Players");
+							System.out.println("idlers         : List all idle Players not in any game");
+							System.out.println("games          : List all the games that have been created and status");
+							System.out.println(
+									"cfg            : List all the games configs that can be used to create games");
+							System.out.println("refreshcfg     : Reads all the games configs from disk again");
+							System.out.println("creategame     : Create a new game with the config");
+							System.out.println("viewgame       : Can view games that have started and in progress");
+							System.out.println("restartgame    : Reloads a game config and readds existingplayers");
+							System.out.println("deletegame     : Stops an existing game and deletes it");
+							System.out.println("addplayer      : Adds a connected player to a game");
+							System.out.println("removeplayer   : Removes a connected player from a game");
+							System.out.println("exit           : Logout of the system");
+							break;
 						}
-						viewgame(gameId);
-						break;
-					case "":
-						break;
-					case "help":
-					default:
-						System.out.println("Commands supported");
-						System.out.println("players        : List all Players");
-						System.out.println("idlers         : List all idle Players not in any game");
-						System.out.println("games          : List all the games that have been created and status");
-						System.out.println(
-								"cfg            : List all the games configs that can be used to create games");
-						System.out.println("refreshcfg     : Reads all the games configs from disk again");
-						System.out.println("creategame     : Create a new game with the config");
-						System.out.println("viewgame       : Can view games that have started and in progress");
-						System.out.println("restartgame    : Reloads a game config and readds existingplayers");
-						System.out.println("deletegame     : Stops an existing game and deletes it");
-						System.out.println("addplayer      : Adds a connected player to a game");
-						System.out.println("removeplayer   : Removes a connected player from a game");
-						break;
+					} catch (NumberFormatException e) {
+						System.out.println("A number was expected");
 					}
 					System.out.print("\n\nAdmin> ");
 				}
@@ -191,9 +195,8 @@ public class AdminClient extends Thread {
 	private void getAllGameConfigs() {
 		JsonObject allGameConfigs = syncRequestReply(AdminClientMessages.getListGameConfigsRequest());
 		JsonArray arrayJson = (JsonArray) allGameConfigs.get("gameconfigs");
-		
 
-		List<JsonObject> sortedList=sortJsonArray(arrayJson,"identity");
+		List<JsonObject> sortedList = sortJsonArray(arrayJson, "identity");
 
 		// print all the players
 		System.out.println("List of Game Configs:\n");
@@ -239,8 +242,8 @@ public class AdminClient extends Thread {
 		JsonObject availablePlayers = syncRequestReply(
 				AdminClientMessages.getListPlayersRequest(AdminClientMessages.AVAILABLE));
 		JsonArray array = (JsonArray) availablePlayers.get("players");
-		
-		List<JsonObject> sortedList=sortJsonArray(array,"identity");
+
+		List<JsonObject> sortedList = sortJsonArray(array, "identity");
 		// print available players
 		System.out.println("List of Players:\n");
 		for (int i = 0; i < sortedList.size(); i++) {
@@ -256,9 +259,9 @@ public class AdminClient extends Thread {
 		JsonObject availablePlayers = syncRequestReply(
 				AdminClientMessages.getListPlayersRequest(AdminClientMessages.ALL));
 		JsonArray array = (JsonArray) availablePlayers.get("players");
-		
-		List<JsonObject> sortedList=sortJsonArray(array,"identity");
-		
+
+		List<JsonObject> sortedList = sortJsonArray(array, "identity");
+
 		// print all the players
 		System.out.println("List of Players:\n");
 		for (int i = 0; i < sortedList.size(); i++) {
@@ -273,9 +276,8 @@ public class AdminClient extends Thread {
 		JsonObject allGames = syncRequestReply(AdminClientMessages.getListGamesRequest());
 		JsonArray array = (JsonArray) allGames.get("games");
 
-		List<JsonObject> sortedList=sortJsonArray(array,"identity");
-		
-		
+		List<JsonObject> sortedList = sortJsonArray(array, "identity");
+
 		// print all the games
 		System.out.printf("  %10s  %15s  %15s  %s\n", "id", "gameConfig", "status", "description");
 		for (int i = 0; i < sortedList.size(); i++) {
@@ -287,25 +289,25 @@ public class AdminClient extends Thread {
 			System.out.printf("  %10s  %15s  %15s  %s\n", id, gameConfig, status, description);
 		}
 	}
-	
+
 	public void getAllResults() {
 		JsonObject allGames = syncRequestReply(AdminClientMessages.getListGamesRequest());
 		JsonArray array = (JsonArray) allGames.get("games");
 
-		List<JsonObject> sortedList=sortJsonArray(array,"identity");
-		
+		List<JsonObject> sortedList = sortJsonArray(array, "identity");
+
 		// print all the results of games that are finished
-		System.out.printf("  %10s  %10s  %15s  %s\n", "id", "gameConfig", "status", "Result");
+		System.out.printf("  %10s  %10s  %9s  %s\n", "id", "gameConfig", "status", "Result");
 		for (int i = 0; i < sortedList.size(); i++) {
 			JsonObject game = (JsonObject) sortedList.get(i);
-			Status gameStatus=Status.getStatus(game.getString("status")); 
-			if(gameStatus != Status.CREATED && gameStatus != Status.INPROGRESS) {
+			Status gameStatus = Status.getStatus(game.getString("status"));
+			if (gameStatus != Status.CREATED && gameStatus != Status.INPROGRESS) {
 				String id = game.getString("identity");
 				String gameConfig = game.getString("gameConfig");
 				String result = game.getString("result");
-				System.out.printf("  %10s  %10s  %15s  %s\n", id, gameConfig, gameStatus.name(), result);
+				System.out.printf("  %10s  %10s  %9s  %s\n", id, gameConfig, gameStatus.name(), result);
 			}
-		}		
+		}
 	}
 
 	public void createGame(String gameConfig) {
@@ -331,10 +333,10 @@ public class AdminClient extends Thread {
 			String playersAdded = "";
 			for (int i = 0; i < players.size(); i++)
 				playersAdded += players.getString(i) + " ";
-			System.out.println("  Players added to game " + game + " are -" + playersAdded);
+			System.out.println("  Players added to game " + game + " are :" + playersAdded);
 		}
 	}
-	
+
 	private void removePlayer(String removePlayer) {
 		String[] args = removePlayer.trim().split("\\s+");
 		if (args.length < 2) {
@@ -354,7 +356,7 @@ public class AdminClient extends Thread {
 			System.out.println("  Players Removed from game " + game + " are -" + playersRemoved);
 		}
 	}
-	
+
 	private void viewgame(String gameId) {
 
 		Game selectedGame = getGameStatus(Integer.parseInt(gameId));
@@ -371,7 +373,7 @@ public class AdminClient extends Thread {
 
 	public Game getGameStatus(int gameId) {
 		JsonObject viewGame = syncRequestReply(AdminClientMessages.getViewGameRequest(gameId));
-		//System.out.println(viewGame.toJson());
+		// System.out.println(viewGame.toJson());
 		JsonObject gameStatus = ((JsonObject) viewGame.get("gameStatus"));
 		return (gameStatus == null ? null : new Game(gameStatus));
 	}
@@ -424,24 +426,23 @@ public class AdminClient extends Thread {
 		return msg;
 
 	}
-	
-	public List<JsonObject> sortJsonArray(JsonArray arrayJson, String sortKeyField){
 
-	    List<JsonObject> arrayList = new ArrayList<JsonObject>();
-	    for (int i = 0; i < arrayJson.size(); i++) {
-	    	arrayList.add((JsonObject) arrayJson.get(i));
-	    }
-	    
-	    Collections.sort(arrayList, new Comparator<JsonObject>() {
-	        @Override
-	        public int compare(final JsonObject object1, final JsonObject object2) {
-	            return object1.getString(sortKeyField).compareTo(object2.getString(sortKeyField));
-	        }
-	    });	
-	    return arrayList;
+	public List<JsonObject> sortJsonArray(JsonArray arrayJson, String sortKeyField) {
+
+		List<JsonObject> arrayList = new ArrayList<JsonObject>();
+		for (int i = 0; i < arrayJson.size(); i++) {
+			arrayList.add((JsonObject) arrayJson.get(i));
+		}
+
+		Collections.sort(arrayList, new Comparator<JsonObject>() {
+			@Override
+			public int compare(final JsonObject object1, final JsonObject object2) {
+				return object1.getString(sortKeyField).compareTo(object2.getString(sortKeyField));
+			}
+		});
+		return arrayList;
 	}
 
-	
 	private void close() {
 		try {
 			clientSocket.close();

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Collapsible Tree Example</title>
+
+    <style>
+
+	.node circle {
+	  fill: #fff;
+	  stroke: steelblue;
+	  stroke-width: 3px;
+	}
+
+	.node text { font: 12px sans-serif; }
+
+	.link {
+	  fill: none;
+	  stroke: #ccc;
+	  stroke-width: 2px;
+	}
+	
+    </style>
+
+  </head>
+
+  <body>
+
+<!-- load the d3.js library -->	
+<script src="http://d3js.org/d3.v3.min.js"></script>
+	
+<script>
+
+var treeData = [
+{
+   "playerName":"Human1",
+   "gameStatus":{
+      "gameId":1,
+      "gameConfigid":"example",
+      "gameStatus":"INPROGRESS",
+      "numHumanPlayers":1,
+      "isInitialized":false,
+      "isStarted":false,
+      "numGoals":1,
+      "allPlayers":[
+         {
+            "chips":{
+               "chips":[
+                  {
+                     "colorNum":2
+                  }
+               ],
+               "numChips":7
+            },
+            "startTile":{
+               "yCoord":2,
+               "xCoord":4,
+               "width":1,
+               "height":1
+            },
+            "playerName":"Human1",
+            "exchangesReceived":[
+               {
+                  "exchangeId":7,
+                  "valid":false,
+                  "chipsAsked":[
+                     {
+                        "integer":1,
+                        "ctColor":{
+                           "colorNum":5
+                        }
+                     }
+                  ],
+                  "round":1,
+                  "agentName":"Agent2",
+                  "ownerApproval":false,
+                  "chipsOffered":[
+                     {
+                        "integer":1,
+                        "ctColor":{
+                           "colorNum":5
+                        }
+                     }
+                  ]
+               }
+            ],
+            "exchangesInitiated":[
+               {
+                  "exchangeId":5,
+                  "valid":false,
+                  "chipsAsked":[
+                     {
+                        "integer":1,
+                        "ctColor":{
+                           "colorNum":1
+                        }
+                     }
+                  ],
+                  "round":1,
+                  "agentName":"Agent4",
+                  "ownerApproval":false,
+                  "chipsOffered":[
+
+                  ]
+               }
+            ],
+            "chipsMissingFromBestPath":{
+               "chips":[
+                  {
+                     "colorNum":4
+                  }
+               ],
+               "numChips":1
+            },
+            "exchangeInitiatedArchive":[
+               {
+                  "exchangeId":1,
+                  "valid":false,
+                  "chipsAsked":[
+                     {
+                        "integer":1,
+                        "ctColor":{
+                           "colorNum":1
+                        }
+                     }
+                  ],
+                  "round":1,
+                  "agentName":"Agent4",
+                  "ownerApproval":true,
+                  "chipsOffered":[
+                     {
+                        "integer":1,
+                        "ctColor":{
+                           "colorNum":2
+                        }
+                     }
+                  ]
+               }
+            ],
+            "improvedPath":{
+               "pathpoints":[
+                  {
+                     "yCoord":3,
+                     "xCoord":1,
+                     "width":1,
+                     "height":1
+                  }
+               ]
+            },
+            "networkUser":{
+               "identity":"1",
+               "currentGame":1,
+               "userType":"HUMAN"
+            },
+            "currentTile":{
+               "yCoord":2,
+               "xCoord":4,
+               "width":1,
+               "height":1
+            },
+            "score":0,
+            "chipsUsedInBestPath":{
+               "chips":[
+                  {
+                     "colorNum":5
+                  }
+               ],
+               "numChips":1
+            },
+            "bestPathToGoal":[
+               {
+                  "hisDormantRounds":0,
+                  "role":"",
+                  "chips":{
+                     "chips":[
+                        {
+                           "colorNum":2
+                        }
+                     ],
+                     "numChips":7
+                  },
+                  "timeStampID":0,
+                  "myDormantRounds":0,
+                  "transfersAllowed":false,
+                  "score":-3,
+                  "movesAllowed":false,
+                  "communicationAllowed":false,
+                  "pin":1,
+                  "perGameId":-1,
+                  "teamId":-1,
+                  "position":{
+                     "yCoord":2,
+                     "xCoord":4,
+                     "width":1,
+                     "height":1
+                  },
+                  "relationship":""
+               }
+            ],
+            "id":0,
+            "playerIcon":"H1",
+            "playerStatus":{
+               "hisDormantRounds":0,
+               "role":"",
+               "chips":{
+                  "chips":[
+                     {
+                        "colorNum":2
+                     }
+                  ],
+                  "numChips":7
+               },
+               "timeStampID":0,
+               "myDormantRounds":0,
+               "transfersAllowed":false,
+               "score":0,
+               "movesAllowed":false,
+               "communicationAllowed":false,
+               "pin":1,
+               "perGameId":-1,
+               "teamId":-1,
+               "position":{
+                  "yCoord":2,
+                  "xCoord":4,
+                  "width":1,
+                  "height":1
+               },
+               "relationship":""
+            },
+            "human":true,
+            "reachedGoal":true,
+            "chipsNotUsedInBestPath":{
+               "chips":[
+                  {
+                     "colorNum":2
+                  }
+               ],
+               "numChips":5
+            },
+            "leftGame":false,
+            "tilePlayer":null,
+            "playerId":18
+         }
+      ],
+      "score":{
+         "distweight":-5,
+         "goalweight":100,
+         "colorweights":[
+
+         ],
+         "basescore":0.0,
+         "chipweight":1
+      },
+      "numComputerPlayers":5,
+      "numAllPlayers":6,
+      "board":{
+         "columns":6,
+         "num_colors_used":5,
+         "rows":6,
+         "map":[
+            [
+               {
+                  "tileGoal":null,
+                  "goal":null,
+                  "color":{
+                     "colorNum":4
+                  },
+                  "hasPlayer":false,
+                  "hasGoal":false,
+                  "location":{
+                     "yCoord":0,
+                     "xCoord":0,
+                     "width":1,
+                     "height":1
+                  }
+               }
+            ]
+         ]
+      },
+      "phases":{
+         "currentleft":5,
+         "phaseSequence":[
+            {
+               "duration":5,
+               "name":"Communication",
+               "indefinite":false
+            },
+            {
+               "duration":5,
+               "name":"Exchange",
+               "indefinite":false
+            },
+            {
+               "duration":5,
+               "name":"Movement",
+               "indefinite":false
+            }
+         ],
+         "current":{
+            "duration":5,
+            "name":"Communication",
+            "indefinite":false
+         },
+         "currentelapsed":1684,
+         "previous":null,
+         "phasesElapsed":0,
+         "isLoop":true,
+         "time":1540548375629
+      },
+      "rounds":1,
+      "goals":[
+         {
+            "DEFAULT_GOAL_TYPE":null,
+            "currentTile":{
+               "tileGoal":null,
+               "goal":null,
+               "color":null,
+               "hasPlayer":false,
+               "hasGoal":false,
+               "location":{
+                  "yCoord":3,
+                  "xCoord":5,
+                  "width":1,
+                  "height":1
+               }
+            },
+            "tileGoal":null,
+            "x":5,
+            "y":3,
+            "goalIcon":"Target"
+         }
+      ]
+   },
+   "type":"UpdateGame"
+}
+];
+
+// ************** Generate the tree diagram	 *****************
+var margin = {top: 20, right: 120, bottom: 20, left: 120},
+	width = 960 - margin.right - margin.left,
+	height = 500 - margin.top - margin.bottom;
+	
+var i = 0;
+
+var tree = d3.layout.tree()
+	.size([height, width]);
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("body").append("svg")
+	.attr("width", width + margin.right + margin.left)
+	.attr("height", height + margin.top + margin.bottom)
+  .append("g")
+	.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+root = treeData[0];
+  
+update(root);
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+	  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+  // Declare the nodes…
+  var node = svg.selectAll("g.node")
+	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter the nodes.
+  var nodeEnter = node.enter().append("g")
+	  .attr("class", "node")
+	  .attr("transform", function(d) { 
+		  return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeEnter.append("circle")
+	  .attr("r", 10)
+	  .style("fill", "#fff");
+
+  nodeEnter.append("text")
+	  .attr("x", function(d) { 
+		  return d.children || d._children ? -13 : 13; })
+	  .attr("dy", ".35em")
+	  .attr("text-anchor", function(d) { 
+		  return d.children || d._children ? "end" : "start"; })
+	  .text(function(d) { return d.name; })
+	  .style("fill-opacity", 1);
+
+  // Declare the links…
+  var link = svg.selectAll("path.link")
+	  .data(links, function(d) { return d.target.id; });
+
+  // Enter the links.
+  link.enter().insert("path", "g")
+	  .attr("class", "link")
+	  .attr("d", diagonal);
+
+}
+
+</script>
+	
+  </body>
+</html>

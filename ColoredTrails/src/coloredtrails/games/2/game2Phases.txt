@@ -1,10 +1,10 @@
 3
 Communication 
-120
-True
+3
+False
 Exchange 
-120
-True
+3
+False
 Movement 
-120
-True
+3
+False

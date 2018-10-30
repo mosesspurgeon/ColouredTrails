@@ -62,7 +62,7 @@ public class AdminHandler extends Thread {
 			while ((adminClientMsg = reader.readLine()) != null) {
 				LOGGER.log(Level.FINE,
 						Thread.currentThread().getName() + " - Message from client " + clientNum + " received: ");
-				LOGGER.log(Level.FINEST,
+				LOGGER.log(Level.INFO,
 						Thread.currentThread().getName() + " - Message from client received: " + adminClientMsg);
 
 				Message msg = new Message(MessageType.ADMIN, adminClientMsg);
@@ -168,7 +168,7 @@ public class AdminHandler extends Thread {
 						playersRemoved.add(userId);
 					}
 				}
-				replyToClient = ServerMessages.getAddPlayerResponse(gameId,playersRemoved);
+				replyToClient = ServerMessages.getRemovePlayerResponse(gameId,playersRemoved);
 				sendMessage(replyToClient.toJson());
 				break;
 			default:
@@ -188,10 +188,9 @@ public class AdminHandler extends Thread {
 
 	public void sendMessage(String msg) {
 
-		if (this.adminIdentity != null) {
-			LOGGER.log(Level.FINER, Thread.currentThread().getName() + " - Message sent to Admin client:" + clientNum
-					+ " Admin User:" + adminIdentity + msg);
-		}
+
+		LOGGER.log(Level.INFO, Thread.currentThread().getName() + " - Message sent to Admin client:" + clientNum
+					+ " Admin User:" + (this.adminIdentity != null?adminIdentity:"") + msg);
 		try {
 			writer.write((msg + "\n"));
 			writer.flush();

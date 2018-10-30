@@ -128,6 +128,17 @@ public class ServerMessages {
 		return addPlayer;
 	}
 
+	public static JsonObject getRemovePlayerResponse(Integer gameId,List<String> playerIds) {
+		JsonObject addPlayer = new JsonObject();
+		addPlayer.put("type", "RemovePlayer");
+		addPlayer.put("game", gameId);
+		JsonArray players = new JsonArray();
+		for(String playerId:playerIds)
+			players.add(playerId);
+		addPlayer.put("players", players);
+		return addPlayer;
+	}
+
 	public static JsonObject getViewGameResponse(Integer gameId, Game requestedGame) {
 		JsonObject viewGame = new JsonObject();
 		viewGame.put("type", "ViewGame");

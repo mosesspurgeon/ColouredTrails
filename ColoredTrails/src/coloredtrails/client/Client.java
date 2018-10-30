@@ -6,7 +6,7 @@ import coloredtrails.common.Exchange;
 
 public interface Client {
 	
-	//calls
+	//auxillary functions
 
 	public String getServerHostname();
 
@@ -20,6 +20,8 @@ public interface Client {
 
 	public void setClientName(String name);
 	
+	//calls to server
+
 	public void connectToServer();
 	
 	public void sendExchanges(List<Exchange> exchanges);
@@ -29,11 +31,10 @@ public interface Client {
 	public void sendQuitGame();
 	
 	
-	//call backs
+	//call backs from server
 	
 	public void connectionStatus(boolean status);
 	
-	//public void startGame(String gamestatus);
 	public void updateGame(String gamestatus);
 	
 }
