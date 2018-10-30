@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.osgi_3.12.100.v20180210-1608.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.osgi_3.12.100.v20180210-1608.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.core.commands_3.9.0.v20170530-1048.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.core.commands_3.9.0.v20170530-1048.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.equinox.common_3.9.0.v20170207-1454.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.equinox.common_3.9.0.v20170207-1454.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.equinox.registry_3.7.0.v20170222-1344.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.equinox.registry_3.7.0.v20170222-1344.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.core.runtime_3.13.0.v20170207-1030.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.core.runtime_3.13.0.v20170207-1030.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.text_3.6.100.v20170203-0814.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.text_3.6.100.v20170203-0814.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.swt.gtk.linux.x86_64_3.106.3.v20180329-0507.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.swt.gtk.linux.x86_64_3.106.3.v20180329-0507.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.jface_3.13.2.v20171022-1656.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.jface_3.13.2.v20171022-1656.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.jface.text_3.12.2.v20180112-1341.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.jface.text_3.12.2.v20180112-1341.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.ui.workbench_3.110.1.v20170704-1208.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.ui.workbench_3.110.1.v20170704-1208.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/com.ibm.icu_58.2.0.v20170418-1837.jar" sourcepath="/home/morvered/eclipse/plugins/com.ibm.icu_58.2.0.v20170418-1837.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/eclipse/plugins/org.eclipse.ui.forms_3.7.101.v20170815-1446.jar" sourcepath="/home/morvered/eclipse/plugins/org.eclipse.ui.forms_3.7.101.v20170815-1446.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/Workspace/lib/jars/lwjgl.jar">
+		<attributes>
+			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="/home/morvered/Workspace/lib/natives"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="/home/morvered/Workspace/lib/jars/lwjgl_util.jar"/>
+	<classpathentry kind="lib" path="/home/morvered/Workspace/lib/jars/slick-util.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

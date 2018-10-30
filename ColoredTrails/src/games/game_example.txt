@@ -1,0 +1,39 @@
+gameN.txt
+
+
+Rows 3
+Columns 3
+Scoring a,b,c // goalweight-value of being at the goal, distweight-cost of unit distance from goal,chipweight-value of chips still in posession
+Number of Colors Used 2
+Map 0 1 0
+1 0 0
+1 1 0
+Number of human players
+Initial human player 1 location x,y,name //X increases from left to right. Y increases from top to bottom
+Number of computer players
+Initial computer player 1 location x,y,name
+Initial computer player 2 location x,y,name
+Number of goals
+Initial goal location for goal 1 : x,y
+Number of Chips for human player 1: 5
+Chip distribution for human player 1: 0 1 1 0 0 
+Number of Chips for computer player 1: 5
+Chip distribution for computer player 1: 0 1 1 0 0 
+Number of Chips for computer player 2: 5
+Chip distribution for computer player 2: 0 1 1 0 0 
+
+
+
+gameNPhases.txt
+
+
+3 // Number of phases
+Communication  //Name of first Phase
+120 // time of first phase
+True //is the phase indefinite
+Exchange //Name of second Phase
+120 //time of second phase
+False //is the phase indefinite
+Movement //Name of third Phase
+0 //time of third phase
+True //is the phase indefinite

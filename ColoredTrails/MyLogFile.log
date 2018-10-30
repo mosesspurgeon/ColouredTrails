@@ -1,0 +1,930 @@
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcBestPaths
+INFO: Player name : Human1
+Player position : (R:4,C:2)
+Player chip number 6
+Player chip allocation : 
+2 1 1 5 1 4 
+Length of Best path : 2
+Best path:
+(R:4,C:2) (R:5,C:2) 
+Player name : Agent1
+Player position : (R:1,C:2)
+Player chip number 6
+Player chip allocation : 
+2 3 2 3 5 5 
+Length of Best path : 2
+Best path:
+(R:1,C:2) (R:1,C:3) 
+Player name : Agent2
+Player position : (R:1,C:1)
+Player chip number 6
+Player chip allocation : 
+5 3 2 2 5 1 
+Length of Best path : 5
+Best path:
+(R:1,C:1) (R:2,C:1) (R:3,C:1) (R:4,C:1) (R:4,C:2) 
+Player name : Agent3
+Player position : (R:4,C:0)
+Player chip number 6
+Player chip allocation : 
+4 5 2 1 4 4 
+Length of Best path : 4
+Best path:
+(R:4,C:0) (R:4,C:1) (R:5,C:1) (R:5,C:2) 
+Player name : Agent4
+Player position : (R:5,C:4)
+Player chip number 6
+Player chip allocation : 
+3 3 1 4 1 5 
+Length of Best path : 2
+Best path:
+(R:5,C:4) (R:5,C:3) 
+Player name : Agent5
+Player position : (R:4,C:3)
+Player chip number 6
+Player chip allocation : 
+5 4 3 4 4 1 
+Length of Best path : 2
+Best path:
+(R:4,C:3) (R:5,C:3) 
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionHuman1Path: [5][2] [5][3]
+All Needed Chips : Color index 3; 
+Actual Needed Chips : Color index 3; 
+Chips Not Used In Best Path : Color index 2; Color index 1; Color index 1; Color index 1; Color index 4; 
+Chips Used In Best Path : Color index 5; 
+Player Human1 needs to request the following chips : Color index 3; 
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+New Shortest Path
+Path: [5][2] [5][3]
+
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent1Path: [1][3] [2][3] [3][3] [4][3] [5][3]
+All Needed Chips : Color index 4; Color index 1; Color index 5; Color index 3; 
+Actual Needed Chips : Color index 4; Color index 1; 
+Chips Not Used In Best Path : Color index 2; Color index 2; Color index 5; 
+Chips Used In Best Path : Color index 3; Color index 5; Color index 3; 
+Player Agent1 needs to request the following chips : Color index 4; Color index 1; 
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent1
+New Shortest Path
+Path: [1][3] [2][3] [3][3] [4][3] [5][3]
+
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcNumChipsNeededFromOtherPlayers
+INFO: calcNumChipsNeededFromOtherPlayers
+ Player name Agent2
+Path Path: [4][2] [4][3] [5][3]
+All Needed Chips : 5; 3; 
+Chips Used In Best Path : Color index 5; Color index 1; Color index 2; Color index 5; 
+Chips Not Used In Best Path : Color index 3; Color index 2; 
+Player Agent2 needs to request the following chips : Color index 5; 
+NEEDS 1
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcNumChipsNeededFromOtherPlayers
+INFO: calcNumChipsNeededFromOtherPlayers
+ Player name Agent2
+Path Path: [4][2] [5][2] [5][3]
+All Needed Chips : 5; 3; 
+Chips Used In Best Path : Color index 5; Color index 1; Color index 2; Color index 5; 
+Chips Not Used In Best Path : Color index 3; Color index 2; 
+Player Agent2 needs to request the following chips : Color index 5; 
+NEEDS 1
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse findCheapestPath
+INFO: Chosen cheapest remainder path for player Agent2 is : Path: [4][2] [4][3] [5][3]
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent2Path: [4][2] [4][3] [5][3]
+All Needed Chips : Color index 5; Color index 3; 
+Actual Needed Chips : Color index 5; 
+Chips Not Used In Best Path : Color index 2; 
+Chips Used In Best Path : Color index 5; Color index 1; Color index 2; Color index 5; Color index 3; 
+Player Agent2 needs to request the following chips : Color index 5; 
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent1
+New Shortest Path
+Path: [1][3] [2][3] [3][3] [4][3] [5][3]
+
+ Player name : Agent2
+New Shortest Path
+Path: [4][2] [4][3] [5][3]
+
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent3Path: [5][2] [5][3]
+All Needed Chips : Color index 3; 
+Actual Needed Chips : Color index 3; 
+Chips Not Used In Best Path : Color index 4; Color index 4; Color index 4; 
+Chips Used In Best Path : Color index 2; Color index 1; Color index 5; 
+Player Agent3 needs to request the following chips : Color index 3; 
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent1
+New Shortest Path
+Path: [1][3] [2][3] [3][3] [4][3] [5][3]
+
+ Player name : Agent2
+New Shortest Path
+Path: [4][2] [4][3] [5][3]
+
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent1
+New Shortest Path
+Path: [1][3] [2][3] [3][3] [4][3] [5][3]
+
+ Player name : Agent2
+New Shortest Path
+Path: [4][2] [4][3] [5][3]
+
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent1
+New Shortest Path
+Path: [1][3] [2][3] [3][3] [4][3] [5][3]
+
+ Player name : Agent2
+New Shortest Path
+Path: [4][2] [4][3] [5][3]
+
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+ Player name : Agent5
+
+Aug 13, 2018 9:22:44 AM alglib.BestUse calcExchanges
+INFO: ---- Calculate Needed Exchanges ---- 
+Player Agent1 needs to make the following exchange : 
+Needs 1 chip color 4 from Agent3
+Needs 1 chip color 1 from Agent4
+Player Agent2 needs to make the following exchange : 
+Needs 1 chip color 5 from Agent1
+Player Agent3 needs to make the following exchange : 
+Needs 1 chip color 3 from Agent4
+
+Aug 13, 2018 9:23:15 AM alglib.BestUse calcBestPaths
+INFO: Player name : Human1
+Player position : (R:5,C:2)
+Player chip number 6
+Player chip allocation : 
+2 1 1 1 4 3 
+Length of Best path : 2
+Best path:
+(R:5,C:2) (R:5,C:3) 
+Player name : Agent1
+Player position : (R:1,C:3)
+Player chip number 6
+Player chip allocation : 
+2 2 3 5 4 1 
+Length of Best path : 5
+Best path:
+(R:1,C:3) (R:2,C:3) (R:3,C:3) (R:4,C:3) (R:5,C:3) 
+Player name : Agent2
+Player position : (R:2,C:1)
+Player chip number 6
+Player chip allocation : 
+3 2 2 5 1 5 
+Length of Best path : 6
+Best path:
+(R:2,C:1) (R:3,C:1) (R:4,C:1) (R:4,C:2) (R:5,C:2) (R:5,C:3) 
+Player name : Agent3
+Player position : (R:4,C:1)
+Player chip number 4
+Player chip allocation : 
+5 1 4 4 
+Length of Best path : 3
+Best path:
+(R:4,C:1) (R:5,C:1) (R:5,C:2) 
+Player name : Agent4
+Player position : (R:5,C:3)
+Player chip number 3
+Player chip allocation : 
+4 1 5 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent5
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+5 4 4 4 1 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+
+Aug 13, 2018 9:23:15 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+
+Aug 13, 2018 9:23:15 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+
+Aug 13, 2018 9:23:15 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+
+Aug 13, 2018 9:23:15 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent3Path: [5][2] [5][3]
+All Needed Chips : Color index 3; 
+Actual Needed Chips : Color index 3; 
+Chips Not Used In Best Path : Color index 4; Color index 4; 
+Chips Used In Best Path : Color index 1; Color index 5; 
+Player Agent3 needs to request the following chips : Color index 3; 
+
+Aug 13, 2018 9:23:15 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+
+Aug 13, 2018 9:23:15 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+
+Aug 13, 2018 9:23:15 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+ Player name : Agent5
+
+Aug 13, 2018 9:23:15 AM alglib.BestUse calcExchanges
+INFO: ---- Calculate Needed Exchanges ---- 
+Player Agent3 needs to make the following exchange : 
+
+Aug 13, 2018 9:23:20 AM alglib.BestUse calcBestPaths
+INFO: Player name : Human1
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+2 1 1 1 4 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent1
+Player position : (R:2,C:3)
+Player chip number 5
+Player chip allocation : 
+2 2 3 5 1 
+Length of Best path : 4
+Best path:
+(R:2,C:3) (R:3,C:3) (R:4,C:3) (R:5,C:3) 
+Player name : Agent2
+Player position : (R:3,C:1)
+Player chip number 5
+Player chip allocation : 
+3 2 2 5 5 
+Length of Best path : 5
+Best path:
+(R:3,C:1) (R:4,C:1) (R:4,C:2) (R:5,C:2) (R:5,C:3) 
+Player name : Agent3
+Player position : (R:5,C:1)
+Player chip number 3
+Player chip allocation : 
+5 4 4 
+Length of Best path : 2
+Best path:
+(R:5,C:1) (R:5,C:2) 
+Player name : Agent4
+Player position : (R:5,C:3)
+Player chip number 3
+Player chip allocation : 
+4 1 5 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent5
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+5 4 4 4 1 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+
+Aug 13, 2018 9:23:20 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+
+Aug 13, 2018 9:23:20 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+
+Aug 13, 2018 9:23:20 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+
+Aug 13, 2018 9:23:20 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent3Path: [5][2] [5][3]
+All Needed Chips : Color index 3; 
+Actual Needed Chips : Color index 3; 
+Chips Not Used In Best Path : Color index 4; Color index 4; 
+Chips Used In Best Path : Color index 5; 
+Player Agent3 needs to request the following chips : Color index 3; 
+
+Aug 13, 2018 9:23:20 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+
+Aug 13, 2018 9:23:20 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+
+Aug 13, 2018 9:23:20 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+ Player name : Agent5
+
+Aug 13, 2018 9:23:20 AM alglib.BestUse calcExchanges
+INFO: ---- Calculate Needed Exchanges ---- 
+Player Agent3 needs to make the following exchange : 
+
+Aug 13, 2018 9:23:25 AM alglib.BestUse calcBestPaths
+INFO: Player name : Human1
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+2 1 1 1 4 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent1
+Player position : (R:3,C:3)
+Player chip number 4
+Player chip allocation : 
+2 2 3 5 
+Length of Best path : 3
+Best path:
+(R:3,C:3) (R:4,C:3) (R:5,C:3) 
+Player name : Agent2
+Player position : (R:4,C:1)
+Player chip number 4
+Player chip allocation : 
+3 2 5 5 
+Length of Best path : 4
+Best path:
+(R:4,C:1) (R:4,C:2) (R:5,C:2) (R:5,C:3) 
+Player name : Agent3
+Player position : (R:5,C:2)
+Player chip number 2
+Player chip allocation : 
+4 4 
+Length of Best path : 1
+Best path:
+(R:5,C:2) 
+Player name : Agent4
+Player position : (R:5,C:3)
+Player chip number 3
+Player chip allocation : 
+4 1 5 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent5
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+5 4 4 4 1 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+
+Aug 13, 2018 9:23:25 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+
+Aug 13, 2018 9:23:25 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+
+Aug 13, 2018 9:23:25 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+
+Aug 13, 2018 9:23:25 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent3Path: [5][2] [5][3]
+All Needed Chips : Color index 3; 
+Actual Needed Chips : Color index 3; 
+Chips Not Used In Best Path : Color index 4; Color index 4; 
+Chips Used In Best Path : 
+Player Agent3 needs to request the following chips : Color index 3; 
+
+Aug 13, 2018 9:23:25 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+
+Aug 13, 2018 9:23:25 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+
+Aug 13, 2018 9:23:25 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+ Player name : Agent5
+
+Aug 13, 2018 9:23:25 AM alglib.BestUse calcExchanges
+INFO: ---- Calculate Needed Exchanges ---- 
+Player Agent3 needs to make the following exchange : 
+
+Aug 13, 2018 9:23:28 AM alglib.BestUse calcBestPaths
+INFO: Player name : Human1
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+2 1 1 1 4 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent1
+Player position : (R:4,C:3)
+Player chip number 3
+Player chip allocation : 
+2 2 3 
+Length of Best path : 2
+Best path:
+(R:4,C:3) (R:5,C:3) 
+Player name : Agent2
+Player position : (R:4,C:2)
+Player chip number 3
+Player chip allocation : 
+3 2 5 
+Length of Best path : 3
+Best path:
+(R:4,C:2) (R:5,C:2) (R:5,C:3) 
+Player name : Agent3
+Player position : (R:5,C:2)
+Player chip number 2
+Player chip allocation : 
+4 4 
+Length of Best path : 1
+Best path:
+(R:5,C:2) 
+Player name : Agent4
+Player position : (R:5,C:3)
+Player chip number 3
+Player chip allocation : 
+4 1 5 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent5
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+5 4 4 4 1 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+
+Aug 13, 2018 9:23:28 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+
+Aug 13, 2018 9:23:28 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+
+Aug 13, 2018 9:23:28 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+
+Aug 13, 2018 9:23:28 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent3Path: [5][2] [5][3]
+All Needed Chips : Color index 3; 
+Actual Needed Chips : Color index 3; 
+Chips Not Used In Best Path : Color index 4; Color index 4; 
+Chips Used In Best Path : 
+Player Agent3 needs to request the following chips : Color index 3; 
+
+Aug 13, 2018 9:23:28 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+
+Aug 13, 2018 9:23:28 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+
+Aug 13, 2018 9:23:28 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+ Player name : Agent5
+
+Aug 13, 2018 9:23:28 AM alglib.BestUse calcExchanges
+INFO: ---- Calculate Needed Exchanges ---- 
+Player Agent3 needs to make the following exchange : 
+
+Aug 13, 2018 9:23:32 AM alglib.BestUse calcBestPaths
+INFO: Player name : Human1
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+2 1 1 1 4 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent1
+Player position : (R:5,C:3)
+Player chip number 2
+Player chip allocation : 
+2 2 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent2
+Player position : (R:5,C:2)
+Player chip number 2
+Player chip allocation : 
+3 2 
+Length of Best path : 2
+Best path:
+(R:5,C:2) (R:5,C:3) 
+Player name : Agent3
+Player position : (R:5,C:2)
+Player chip number 2
+Player chip allocation : 
+4 4 
+Length of Best path : 1
+Best path:
+(R:5,C:2) 
+Player name : Agent4
+Player position : (R:5,C:3)
+Player chip number 3
+Player chip allocation : 
+4 1 5 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent5
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+5 4 4 4 1 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+
+Aug 13, 2018 9:23:32 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+
+Aug 13, 2018 9:23:32 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+
+Aug 13, 2018 9:23:32 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+
+Aug 13, 2018 9:23:32 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent3Path: [5][2] [5][3]
+All Needed Chips : Color index 3; 
+Actual Needed Chips : Color index 3; 
+Chips Not Used In Best Path : Color index 4; Color index 4; 
+Chips Used In Best Path : 
+Player Agent3 needs to request the following chips : Color index 3; 
+
+Aug 13, 2018 9:23:32 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+
+Aug 13, 2018 9:23:32 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+
+Aug 13, 2018 9:23:32 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+ Player name : Agent5
+
+Aug 13, 2018 9:23:32 AM alglib.BestUse calcExchanges
+INFO: ---- Calculate Needed Exchanges ---- 
+Player Agent3 needs to make the following exchange : 
+
+Aug 13, 2018 9:23:38 AM alglib.BestUse calcBestPaths
+INFO: Player name : Human1
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+2 1 1 1 4 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent1
+Player position : (R:5,C:3)
+Player chip number 2
+Player chip allocation : 
+2 2 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent2
+Player position : (R:5,C:3)
+Player chip number 1
+Player chip allocation : 
+2 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent3
+Player position : (R:5,C:2)
+Player chip number 2
+Player chip allocation : 
+4 4 
+Length of Best path : 1
+Best path:
+(R:5,C:2) 
+Player name : Agent4
+Player position : (R:5,C:3)
+Player chip number 3
+Player chip allocation : 
+4 1 5 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent5
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+5 4 4 4 1 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+
+Aug 13, 2018 9:23:38 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+
+Aug 13, 2018 9:23:38 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+
+Aug 13, 2018 9:23:38 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+
+Aug 13, 2018 9:23:38 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent3Path: [5][2] [5][3]
+All Needed Chips : Color index 3; 
+Actual Needed Chips : Color index 3; 
+Chips Not Used In Best Path : Color index 4; Color index 4; 
+Chips Used In Best Path : 
+Player Agent3 needs to request the following chips : Color index 3; 
+
+Aug 13, 2018 9:23:38 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+
+Aug 13, 2018 9:23:38 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+
+Aug 13, 2018 9:23:38 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+ Player name : Agent5
+
+Aug 13, 2018 9:23:38 AM alglib.BestUse calcExchanges
+INFO: ---- Calculate Needed Exchanges ---- 
+Player Agent3 needs to make the following exchange : 
+
+Aug 13, 2018 9:23:41 AM alglib.BestUse calcBestPaths
+INFO: Player name : Human1
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+2 1 1 1 4 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent1
+Player position : (R:5,C:3)
+Player chip number 2
+Player chip allocation : 
+2 2 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent2
+Player position : (R:5,C:3)
+Player chip number 1
+Player chip allocation : 
+2 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent3
+Player position : (R:5,C:2)
+Player chip number 2
+Player chip allocation : 
+4 4 
+Length of Best path : 1
+Best path:
+(R:5,C:2) 
+Player name : Agent4
+Player position : (R:5,C:3)
+Player chip number 3
+Player chip allocation : 
+4 1 5 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+Player name : Agent5
+Player position : (R:5,C:3)
+Player chip number 5
+Player chip allocation : 
+5 4 4 4 1 
+Length of Best path : 1
+Best path:
+(R:5,C:3) 
+
+Aug 13, 2018 9:23:41 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+
+Aug 13, 2018 9:23:41 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+
+Aug 13, 2018 9:23:41 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+
+Aug 13, 2018 9:23:41 AM alglib.BestUse calcChipsNeededFromOtherPlayers
+INFO: calcChipsNeededFromOtherPlayers functionAgent3Path: [5][2] [5][3]
+All Needed Chips : Color index 3; 
+Actual Needed Chips : Color index 3; 
+Chips Not Used In Best Path : Color index 4; Color index 4; 
+Chips Used In Best Path : 
+Player Agent3 needs to request the following chips : Color index 3; 
+
+Aug 13, 2018 9:23:41 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+
+Aug 13, 2018 9:23:41 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+
+Aug 13, 2018 9:23:41 AM alglib.BestUse calcNeededChips
+INFO:  Player name : Human1
+ Player name : Agent1
+ Player name : Agent2
+ Player name : Agent3
+New Shortest Path
+Path: [5][2] [5][3]
+
+ Player name : Agent4
+ Player name : Agent5
+
+Aug 13, 2018 9:23:41 AM alglib.BestUse calcExchanges
+INFO: ---- Calculate Needed Exchanges ---- 
+Player Agent3 needs to make the following exchange : 
+
