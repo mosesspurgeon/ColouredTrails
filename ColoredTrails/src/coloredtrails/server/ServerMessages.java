@@ -8,9 +8,18 @@ import org.json.simple.JsonObject;
 
 import coloredtrails.common.Game;
 import coloredtrails.common.UserType;
+/**
+ * Class documents all the JSON messages that the server could send out
+ *
+ * @author Moses Satyam (msatyam@student.unimelb.edu.au)
+ * @version 1.0
+ * @since 2018-09-01
+ */
 
 public class ServerMessages {
-	// Player Client Messages
+	/*
+	 *  Player Client Messages
+	 */
 	@SuppressWarnings("unchecked")
 	public static JsonObject getNewIdentityResponse(boolean approval, UserType userType, String identity) {
 		JsonObject newIdentityRes = new JsonObject();
@@ -36,8 +45,9 @@ public class ServerMessages {
 	}	
 	
 
-	// Admin Client Messages
-	// Player Client Messages
+    /*
+     *  Admin Client Messages
+     */	
 	@SuppressWarnings("unchecked")
 	public static JsonObject getAdminConnectionResponse(boolean approval, String identity) {
 		JsonObject newIdentityRes = new JsonObject();

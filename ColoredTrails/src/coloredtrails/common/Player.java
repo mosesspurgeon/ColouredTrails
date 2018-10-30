@@ -613,10 +613,11 @@ public  class Player implements JsonSerializable{
 	 * @param color
 	 */
 	public boolean giveColors(int numChips, CtColor color) {
-		//TODO: this should not be checking chipsnotused anymore. The agent should check this and provide approvals
+	    
+	    //TODO: this should be modified to check just chips
 		if(this.chipsNotUsedInBestPath.getNumChips(color)>=numChips) {
 			for(int i=0;i<numChips;i++) {
-				if(this.chipsNotUsedInBestPath.contains(color)) 
+				if(this.chips.contains(color)) 
 				{
 					ChipSet.subtractColor(this.chips, color);
 					ChipSet.subtractColor(this.chipsNotUsedInBestPath, color);
@@ -626,7 +627,7 @@ public  class Player implements JsonSerializable{
 			updatePlayerStatusChips();
 			return true;
 		} 
-		System.out.println("ERROR !!!! This should not be an option, I should not give away chips I need or chips I don't have");
+		System.out.println("ERROR !!!! This should not be an option, I should not give away chips I don't have");
 		return false;
 		
 	}

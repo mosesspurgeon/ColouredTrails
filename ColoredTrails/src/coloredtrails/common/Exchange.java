@@ -13,6 +13,7 @@ public class Exchange implements JsonSerializable{
 	private HashMap<CtColor, Integer> chipsAsked;
 	private HashMap<CtColor, Integer> chipsOffered;
 	private Boolean ownerApproval=false;
+	//invalid exchange if the owner does not even possess the chips
 	private Boolean valid = false;
 	private int round=-1;
 	

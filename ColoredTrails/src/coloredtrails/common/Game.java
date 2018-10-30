@@ -346,7 +346,10 @@ public class Game implements Serializable, Cloneable {
 	 * @param newPlayerStatus
 	 */
 	public void moveNextStep(Player p, PlayerStatus newPlayerStatus) {
-		// leave the current tile
+        //:TODO to be modified to check if chip is available first
+	    //before moving by one step
+
+	    // leave the current tile
 		Tile initialTile = p.getCurrentTile();
 		initialTile.removePlayer(p);
 

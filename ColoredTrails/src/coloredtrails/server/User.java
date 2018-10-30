@@ -2,86 +2,92 @@ package coloredtrails.server;
 
 import java.net.Socket;
 
-import javax.net.ssl.SSLSocket;
-
 import org.json.simple.JsonObject;
 
 import coloredtrails.common.JsonSerializable;
 import coloredtrails.common.UserType;
 
-public class User  implements JsonSerializable{
+/**
+ * This represents one client player on the network. This could either be a
+ * human or a computer agent
+ *
+ * @author Moses Satyam (msatyam@student.unimelb.edu.au)
+ * @version 1.0
+ * @since 2018-09-01
+ */
 
-	private String identity;
-	private Integer currentGame;
-	private PlayerHandler managingThread;
-	private Socket clientSocket;
-	private UserType userType;
+public class User implements JsonSerializable {
 
-	public User(String identity, PlayerHandler managingThread, Socket clientSocket, UserType userType) {
-		super();
-		this.identity = identity;
-		this.managingThread = managingThread;
-		this.clientSocket = clientSocket;
-		this.userType = userType;
-	}
+    private String identity;
+    private Integer currentGame;
+    private PlayerHandler managingThread;
+    private Socket clientSocket;
+    private UserType userType;
 
+    public User(String identity, PlayerHandler managingThread,
+            Socket clientSocket, UserType userType) {
+        super();
+        this.identity = identity;
+        this.managingThread = managingThread;
+        this.clientSocket = clientSocket;
+        this.userType = userType;
+    }
 
-	public User(JsonObject user) {
-		this.identity = user.getString("identity");
-		this.currentGame = user.getInteger("currentGame");
-		this.userType = UserType.getUserType(user.getString("userType"));
-	}
-	@Override
-	public JsonObject toJsonObject() {
-		JsonObject user= new JsonObject();
-		user.put("identity", identity);
-		user.put("currentGame", currentGame);
-		user.put("userType", userType.name());
-		return user;
-	}
-	
-	//copy constructor used only to get a copy of identity info
-	//used generally on game completion or when user disconnects
-	public User (User user) {
-		this.identity = user.identity;
-		this.currentGame = user.currentGame;
-		this.userType = user.userType;
-	}
-	
-	public String getIdentity() {
-		return identity;
-	}
+    public User(JsonObject user) {
+        this.identity = user.getString("identity");
+        this.currentGame = user.getInteger("currentGame");
+        this.userType = UserType.getUserType(user.getString("userType"));
+    }
 
-	public Integer getCurrentGame() {
-		return currentGame;
-	}
+    @Override
+    public JsonObject toJsonObject() {
+        JsonObject user = new JsonObject();
+        user.put("identity", identity);
+        user.put("currentGame", currentGame);
+        user.put("userType", userType.name());
+        return user;
+    }
 
-	public void setCurrentGame(Integer currentGame) {
-		this.currentGame = currentGame;
-	}
+    // copy constructor used only to get a copy of identity info
+    // used generally on game completion or when user disconnects
+    public User(User user) {
+        this.identity = user.identity;
+        this.currentGame = user.currentGame;
+        this.userType = user.userType;
+    }
 
-	public PlayerHandler getManagingThread() {
-		return managingThread;
-	}
+    public String getIdentity() {
+        return identity;
+    }
 
-	public Socket getClientSocket() {
-		return clientSocket;
-	}
+    public Integer getCurrentGame() {
+        return currentGame;
+    }
 
-	public UserType getUserType() {
-		return userType;
-	}
-	
-	public void disconnectGame() {
-		setCurrentGame(null);
-	}
+    public void setCurrentGame(Integer currentGame) {
+        this.currentGame = currentGame;
+    }
 
+    public PlayerHandler getManagingThread() {
+        return managingThread;
+    }
 
-	public boolean isIdle() {
-		if(getCurrentGame() == null)
-			return true;
-		return false;
-	}
+    public Socket getClientSocket() {
+        return clientSocket;
+    }
 
+    public UserType getUserType() {
+        return userType;
+    }
+
+    public void disconnectGame() {
+        setCurrentGame(null);
+    }
+
+    public boolean isIdle() {
+        if (getCurrentGame() == null)
+            return true;
+        return false;
+    }
 
 }

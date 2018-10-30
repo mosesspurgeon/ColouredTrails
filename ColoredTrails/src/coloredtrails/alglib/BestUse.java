@@ -216,6 +216,7 @@ public class BestUse
 						//it should also check if the lender has the requested chips available
 						
 						boolean chipsGiven=game.getPlayer(exchange.getAgentName()).giveColors(exchange.getChipsAsked().get(color),color);
+						exchange.setValid(chipsGiven);
 						//we first take the chips from lender and then add to requestor
 						//this will make sure earlier bug is avoided
 						if(chipsGiven)
