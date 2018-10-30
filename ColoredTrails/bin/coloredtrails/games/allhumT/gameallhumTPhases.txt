@@ -1,0 +1,10 @@
+3
+Communication 
+30
+False
+Exchange 
+20
+False
+Movement 
+5
+False

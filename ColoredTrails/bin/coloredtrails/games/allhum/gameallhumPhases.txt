@@ -1,0 +1,10 @@
+3
+Communication 
+5
+True
+Exchange 
+5
+True
+Movement 
+5
+True
